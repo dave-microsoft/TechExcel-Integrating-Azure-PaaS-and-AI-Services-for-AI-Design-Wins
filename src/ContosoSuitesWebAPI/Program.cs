@@ -35,7 +35,7 @@ builder.Services.AddSingleton<MaintenanceCopilot, MaintenanceCopilot>();
 builder.Services.AddSingleton<CosmosClient>((_) =>
 {
     CosmosClient client = new(
-        connectionString: builder.Configuration["CosmosDB:ConnectionString"]!
+        connectionString: builder.Configuration["CosmosDB_ConnectionString"]!
     );
     return client;
 });
