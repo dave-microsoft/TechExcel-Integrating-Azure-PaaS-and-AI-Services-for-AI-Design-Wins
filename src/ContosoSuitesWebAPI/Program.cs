@@ -33,7 +33,7 @@ builder.Services.AddSingleton<MaintenanceCopilot, MaintenanceCopilot>();
 
 // Create a single instance of the CosmosClient to be shared across the application.
 builder.Services.AddSingleton<CosmosClient>((_) =>
-{
+{ 
     CosmosClient client = new(
         connectionString: builder.Configuration["CosmosDB_ConnectionString"]!
     );
@@ -67,8 +67,9 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 // //{
-app.UseSwaggerUI();
 app.UseSwagger();
+app.UseSwaggerUI();
+
 //}
 
 app.UseHttpsRedirection();
