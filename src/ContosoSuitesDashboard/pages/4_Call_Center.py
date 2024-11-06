@@ -43,6 +43,7 @@ def create_transcription_request(audio_file, speech_recognition_language="en-US"
     all_results = []
 
     def handle_final_result(evt):
+        all_results.append("Test")
         all_results.append(evt.result.text)
 
     done = False
@@ -71,8 +72,9 @@ def create_transcription_request(audio_file, speech_recognition_language="en-US"
         time.sleep(.5)
 
     transcriber.stop_transcribing_async()
+    #set all_results to the transcript
 
-    all_results = ['This is a test.', 'Fill in with real transcription.']
+    #all_results = ['This is a test.', 'Fill in with real transcription.']
 
     return all_results
 
